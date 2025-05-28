@@ -37,7 +37,7 @@ jobs:
 
 
             - name: Docker build
-              run: docker build -t yalilila15/java-maven:${{ steps.extract_version.outputs.VERSION }} .
+              run: docker build -t yalilila15/java-maven:${{ steps.extract_version.outputs.VERSION }} -t yalilila15/java-maven:latest .
 
             - name: Docker push
-              run: docker push yalilila15/java-maven:${{ steps.extract_version.outputs.VERSION }}
+              run: docker push yalilila15/java-maven:latest
