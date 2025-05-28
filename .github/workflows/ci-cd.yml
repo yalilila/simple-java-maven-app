@@ -21,7 +21,7 @@ jobs:
             
             - name: Bump Version        #BREAKING CHANGE for incrementing major, feat for minor, default is patch
               id: bump
-              uses: mickem/gh-action-bump-maven-version
+              uses: mickem/gh-action-bump-maven-version@v1.0.3
               with:
                 commit: true
                 push: true
