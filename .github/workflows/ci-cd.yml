@@ -19,6 +19,15 @@ jobs:
                 java-version: '17'
                 distribution: 'temurin'
             
+            - name: Bump Version        #BREAKING CHANGE for incrementing major, feat for minor, default is patch
+              id: bump
+              uses: mickem/gh-action-bump-maven-version
+              with:
+                commit: true
+                push: true
+
             - name: Build 
               run: mvn -B package --file pom.xml
-              
+
+            # - name: Docker build
+            #   run: docker build -t yalilila15/java-maven:${{ steps.bump.outputs.version }} .
